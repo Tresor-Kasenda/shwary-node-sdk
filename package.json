@@ -1,0 +1,76 @@
+{
+  "name": "@shwary/node-sdk",
+  "version": "1.0.0",
+  "description": "Official Node.js/TypeScript SDK for Shwary Payment API - Mobile Money payments for DRC, Kenya, and Uganda",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "build:watch": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "type-check": "tsc --noEmit",
+    "prepublishOnly": "npm run build && npm run test",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "docs": "typedoc --out docs src/index.ts"
+  },
+  "keywords": [
+    "shwary",
+    "payment",
+    "mobile-money",
+    "drc",
+    "kenya",
+    "uganda",
+    "mpesa",
+    "orange-money",
+    "airtel-money",
+    "sdk",
+    "typescript",
+    "nodejs"
+  ],
+  "author": {
+    "name": "Tresor Kasenda",
+    "email": "tresorkasendat@gmail.com",
+    "url": "https://github.com/Tresor-Kasenda"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tresor-Kasenda/shwary-node-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Tresor-Kasenda/shwary-node-sdk/issues"
+  },
+  "homepage": "https://github.com/Tresor-Kasenda/shwary-node-sdk#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vitest/coverage-v8": "^1.0.0",
+    "eslint": "^8.0.0",
+    "prettier": "^3.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.3.0",
+    "vitest": "^1.0.0"
+  }
+}
